@@ -24,7 +24,7 @@ public class Teacher implements Serializable {
      * 编号
      */
     private Long id;
-    
+
     /**
      * 工号
      */
