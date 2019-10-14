@@ -3,6 +3,7 @@ package com.abc.springboo2.mybatisplus.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -27,5 +28,11 @@ public class TeacherController {
 	@ResponseBody
 	public Object list() {
 		return teacherSerivce.list();
+	}
+	
+	@RequestMapping("/selectByNo/{no}")
+	@ResponseBody
+	public Object selectByNo(@PathVariable("no")String no) {
+		return teacherSerivce.selectByNo(no);
 	}
 }

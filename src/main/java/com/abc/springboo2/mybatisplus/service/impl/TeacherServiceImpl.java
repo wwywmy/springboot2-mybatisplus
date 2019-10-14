@@ -1,10 +1,11 @@
 package com.abc.springboo2.mybatisplus.service.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.abc.springboo2.mybatisplus.entity.Teacher;
 import com.abc.springboo2.mybatisplus.mapper.TeacherMapper;
 import com.abc.springboo2.mybatisplus.service.ITeacherService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.springframework.stereotype.Service;
 
 /**
  * <p>
@@ -16,5 +17,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class TeacherServiceImpl extends ServiceImpl<TeacherMapper, Teacher> implements ITeacherService {
-
+	public Teacher selectByNo(String no) {
+		return baseMapper.selectByNo(no);
+	}
 }
