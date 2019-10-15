@@ -6,4 +6,5 @@ import com.abc.springboot2.mybatisplus.entity.Student;
 
 public interface StudentService {
 	List<Student> selectList();
+	int insert(Student student);
 }

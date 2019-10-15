@@ -23,4 +23,9 @@ public class StudentServiceImpl implements StudentService {
 		return studentList;
 	}
 
+	public int insert(Student student) {
+		int count = studentMapper.insert(student);
+		return count;
+	}
+
 }
