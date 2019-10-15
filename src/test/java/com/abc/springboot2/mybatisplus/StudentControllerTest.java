@@ -1,4 +1,4 @@
-package com.abc.springboo2.mybatisplus;
+package com.abc.springboot2.mybatisplus;
 
 import org.junit.Before;
 import org.junit.Test;

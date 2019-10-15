@@ -1,6 +1,6 @@
-package com.abc.springboo2.mybatisplus.mapper;
+package com.abc.springboot2.mybatisplus.mapper;
 
-import com.abc.springboo2.mybatisplus.entity.Teacher;
+import com.abc.springboot2.mybatisplus.entity.Teacher;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

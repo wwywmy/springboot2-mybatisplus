@@ -1,4 +1,4 @@
-package com.abc.springboo2.mybatisplus.entity;
+package com.abc.springboot2.mybatisplus.entity;
 
 import java.io.Serializable;
 import lombok.Data;

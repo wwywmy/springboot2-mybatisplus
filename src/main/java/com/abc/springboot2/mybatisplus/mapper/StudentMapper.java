@@ -1,6 +1,6 @@
-package com.abc.springboo2.mybatisplus.mapper;
+package com.abc.springboot2.mybatisplus.mapper;
 
-import com.abc.springboo2.mybatisplus.entity.Student;
+import com.abc.springboot2.mybatisplus.entity.Student;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 public interface StudentMapper extends BaseMapper<Student>{

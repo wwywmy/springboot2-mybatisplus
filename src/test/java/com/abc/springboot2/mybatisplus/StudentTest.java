@@ -1,4 +1,4 @@
-package com.abc.springboo2.mybatisplus;
+package com.abc.springboot2.mybatisplus;
 
 import javax.annotation.Resource;
 
@@ -7,8 +7,8 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.abc.springboo2.mybatisplus.entity.Student;
-import com.abc.springboo2.mybatisplus.mapper.StudentMapper;
+import com.abc.springboot2.mybatisplus.entity.Student;
+import com.abc.springboot2.mybatisplus.mapper.StudentMapper;
 
 import lombok.extern.slf4j.Slf4j;
 

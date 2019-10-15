@@ -1,10 +1,10 @@
-package com.abc.springboo2.mybatisplus.controller;
+package com.abc.springboot2.mybatisplus.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.abc.springboo2.mybatisplus.service.StudentService;
+import com.abc.springboot2.mybatisplus.service.StudentService;
 
 @RestController
 @RequestMapping("/student")

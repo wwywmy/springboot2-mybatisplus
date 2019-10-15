@@ -1,4 +1,4 @@
-package com.abc.springboo2.mybatisplus.generator;
+package com.abc.springboot2.mybatisplus.generator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,13 +30,13 @@ public class MysqlGenerator {
 	public final static String USERNAME = "root";
 	public final static String PASSWORD = "123456";
 
-	public final static String PACKAGE_CONFIG_PARENT = "com.abc.springboo2.mybatisplus";
+	public final static String PACKAGE_CONFIG_PARENT = "com.abc.springboot2.mybatisplus";
 
 	public final static String MAPPER_XML_FTL = "/templates/mapper.xml.ftl";
 	public final static String MAPPER_XML_OUTPUT_DIR = "/src/main/resources/mapper/";
 
-	public final static String BASE_ENTITY = "com.abc.springboo2.mybatisplus.common.BaseEntity";
-	public final static String BASE_CONTROLLER = "com.abc.springboo2.mybatisplus.common.BaseController";
+	public final static String BASE_ENTITY = "com.abc.springboot2.mybatisplus.common.BaseEntity";
+	public final static String BASE_CONTROLLER = "com.abc.springboot2.mybatisplus.common.BaseController";
 
 	// scanner("模块名")
 	// scanner("表名")

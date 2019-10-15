@@ -1,4 +1,4 @@
-package com.abc.springboo2.mybatisplus.controller;
+package com.abc.springboot2.mybatisplus.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.abc.springboo2.mybatisplus.service.ITeacherService;
+import com.abc.springboot2.mybatisplus.service.ITeacherService;
 
 /**
  * <p>

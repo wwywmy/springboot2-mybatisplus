@@ -1,6 +1,6 @@
-package com.abc.springboo2.mybatisplus.service;
+package com.abc.springboot2.mybatisplus.service;
 
-import com.abc.springboo2.mybatisplus.entity.Teacher;
+import com.abc.springboot2.mybatisplus.entity.Teacher;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
