@@ -37,6 +37,9 @@ public class MysqlGenerator {
 
 	public final static String BASE_ENTITY = "com.abc.springboot2.mybatisplus.common.BaseEntity";
 	public final static String BASE_CONTROLLER = "com.abc.springboot2.mybatisplus.common.BaseController";
+	
+	public final static String MAPPER_TEST_JAVA_FTL = "/templates/mapperTest.java.ftl";
+	public final static String MAPPER_TEST_JAVA_OUTPUT_DIR = "/src/test/java/com/abc/springboot2/mybatisplus/";
 
 	// scanner("模块名")
 	// scanner("表名")
@@ -108,6 +111,16 @@ public class MysqlGenerator {
 				return projectPath + MAPPER_XML_OUTPUT_DIR + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
 			}
 		});
+		
+		//测试类
+		focList.add(new FileOutConfig(MAPPER_TEST_JAVA_FTL) {
+			@Override
+			public String outputFile(TableInfo tableInfo) {
+				return projectPath + MAPPER_TEST_JAVA_OUTPUT_DIR + "mapper" + "/" + tableInfo.getEntityName() + "Test"
+						+ StringPool.DOT_JAVA;
+			}
+		});
+		
 		cfg.setFileOutConfigList(focList);
 		mpg.setCfg(cfg);
 		mpg.setTemplate(new TemplateConfig().setXml(null));
