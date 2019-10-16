@@ -10,10 +10,12 @@ import com.abc.springboot2.mybatisplus.service.StudentService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/student")
 @Api(value = "学生模块")
+@Slf4j
 public class StudentController {
 
 	@Autowired
@@ -22,6 +24,20 @@ public class StudentController {
 	@ApiOperation(value = "查询用户", notes = "返回所有用户列表")
 	@RequestMapping("/list")
 	public Object selectList() {
+		
+		
+//		ERROR 错误信息
+//		WARN 警告信息
+//		INFO 一般信息
+//		DEBUG 调试信息
+//		TRACE 跟踪信息
+		
+		log.trace("log trace");
+		log.debug("log debug");
+		log.info("log info");
+		log.warn("log warn");
+		log.error("log error");
+		
 		return studentService.selectList();
 	}
 	
