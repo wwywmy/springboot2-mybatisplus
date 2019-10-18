@@ -3,3 +3,16 @@ spring:
 #    active: dev
     active: test
 #    active: pro
+  redis: 
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    timeout: 3000
+    pool: 
+      max-idle: 200
+      min-idle: 200
+      max-active: 2000
+      max-wait: 1000
+
+
