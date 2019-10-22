@@ -6,8 +6,10 @@ import org.apache.http.HttpHeaders;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
@@ -156,6 +158,74 @@ public class HttpClient {
 
 	public HttpResponse doPost(String url) throws Exception {
 		return this.doPost(url, null);
+	}
+	
+	/**
+	 * 发送 http put 请求，参数以原生字符串进行提交
+	 * 
+	 * @param url
+	 * @return
+	 */
+	public HttpResponse httpPutRaw(String url, Map<String, Object> requestParameter, Map<String, Object> headers)
+			throws Exception {
+		HttpPut httpPut = new HttpPut(url);
+		httpPut.setConfig(config);
+
+		httpPut.addHeader(HttpHeaders.CONTENT_TYPE, ContentType.APPLICATION_JSON.getMimeType());
+		if (headers != null && headers.size() > 0) {
+			for (Map.Entry<String, Object> entry : headers.entrySet()) {
+				httpPut.setHeader(entry.getKey(), entry.getValue().toString());
+			}
+		}
+
+		if (requestParameter != null) {
+			String requestBody = JSONObject.toJSONString(requestParameter);
+			StringEntity postEntity = new StringEntity(requestBody, "UTF-8");
+			httpPut.setEntity(postEntity);
+		}
+
+		CloseableHttpResponse response = this.closeableHttpClient.execute(httpPut);
+
+		return new HttpResponse(response.getStatusLine().getStatusCode(),
+				EntityUtils.toString(response.getEntity(), DEFAULT_CHARSET));
+	} 
+	
+	
+	/**
+	 * 发送 http put 请求，参数以原生字符串进行提交
+	 * 
+	 * @param url
+	 * @return
+	 */
+	public String  httpDelete(String url, Map<String, Object> requestParameter, Map<String, Object> headers)
+			throws Exception {
+		
+		URIBuilder uriBuilder = new URIBuilder(url);
+
+		if (requestParameter != null) {
+			for (Map.Entry<String, Object> entry : requestParameter.entrySet()) {
+				uriBuilder.setParameter(entry.getKey(), entry.getValue().toString());
+			}
+		}
+		
+		HttpDelete httpDelete = new HttpDelete(uriBuilder.build().toString());
+		httpDelete.setConfig(config);
+		
+		httpDelete.addHeader(HttpHeaders.CONTENT_TYPE, ContentType.APPLICATION_JSON.getMimeType());
+		if (headers != null && headers.size() > 0) {
+			for (Map.Entry<String, Object> entry : headers.entrySet()) {
+				httpDelete.setHeader(entry.getKey(), entry.getValue().toString());
+			}
+		}
+
+		CloseableHttpResponse response = this.closeableHttpClient.execute(httpDelete);
+
+		int statusCode = response.getStatusLine().getStatusCode();
+		if (statusCode != HttpStatus.SC_OK) {
+			throw new Exception("api request exception, http reponse code:" + statusCode);
+		}
+
+		return EntityUtils.toString(response.getEntity(), DEFAULT_CHARSET);
 	}
 
 	/**
